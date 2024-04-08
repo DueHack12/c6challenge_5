@@ -12,9 +12,10 @@ input.onLogoEvent(TouchButtonEvent.Touched, function () {
     for (let index = 0; index < time; index++) {
         basic.showNumber(time2)
         time2 += -1
-        basic.pause(1000)
+        basic.pause(800)
     }
     time2 = time
+    music.play(music.stringPlayable("C - C - C - C - ", 120), music.PlaybackMode.LoopingInBackground)
     for (let index = 0; index < 10; index++) {
         basic.showLeds(`
             # # # # #
@@ -27,6 +28,7 @@ input.onLogoEvent(TouchButtonEvent.Touched, function () {
         basic.clearScreen()
         basic.pause(100)
     }
+    music.stopAllSounds()
 })
 let time2 = 0
 let time = 0
